@@ -1,8 +1,16 @@
 import telebot
 import get_text
 import translator
+from os import mkdir
+import os.path
+
+if not (os.path.exists('files')):
+	mkdir('files')
+	if not os.path.exists('files/photos'):
+		mkdir('files/photos')
 
 bot = telebot.TeleBot('5925478708:AAHGU-9WmOzjbAKEKHmwUnkJEl79tQ7_bVU')
+
 
 @bot.message_handler(content_types=['text', 'photo'])
 
@@ -32,3 +40,4 @@ def handle_docs_photo(message):
 	bot.reply_to(message, answer)
 
 bot.polling(none_stop=True, interval=0)
+
