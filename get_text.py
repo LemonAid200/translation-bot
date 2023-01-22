@@ -4,9 +4,11 @@ from os import remove
 # import matplotlib.pyplot as plt
 from PIL import Image
 
-pytesseract.pytesseract.tesseract_cmd = r'D:/pytesseract/tesseract.exe'
-
-
+try:
+	pytesseract.pytesseract.tesseract_cmd = r'D:/pytesseract/tesseract.exe'
+except:
+	print('Проверьте, установлен ли tesseract, он должен находиться по адресу D:/pytesseract/tesseract.exe')
+	a = input()
 
 # печатаем
 def extractText (img):
