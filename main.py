@@ -3,13 +3,14 @@ import get_text
 import translator
 from os import mkdir
 import os.path
+import apiKey
 
 if not (os.path.exists('files')):
 	mkdir('files')
 	if not os.path.exists('files/photos'):
 		mkdir('files/photos')
 
-bot = telebot.TeleBot('5925478708:AAHGU-9WmOzjbAKEKHmwUnkJEl79tQ7_bVU')
+bot = telebot.TeleBot(apiKey.key)
 
 
 @bot.message_handler(content_types=['text', 'photo'])
